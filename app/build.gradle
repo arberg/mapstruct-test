@@ -19,7 +19,8 @@ android {
         versionName "1.0"
     }
     compileOptions {
-        // Just here to demonstrate it compiles with this
+        // Just here to demonstrate it compiles with this. Java 8 allows use of repeated annotations,
+        // See AutoValueMapper.java for more comments on this
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }

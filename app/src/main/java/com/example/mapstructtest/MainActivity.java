@@ -60,11 +60,13 @@ public class MainActivity extends AppCompatActivity {
 		AutoValueCar.Builder builder = AutoValueCar.builder();
 		builder.setConstructor("Audi");
 		builder.setNumberOfSeats(5);
+		builder.setNumberOfAirbags(3);
 		builder.setType(CarType.LUXURY);
 		AutoValueCar car = builder.build();
 
 		AutoValueCarDto carDto = AutoValueMapper.INSTANCE.toDto(car);
-		return getString(car, carDto, "mapstruct mapping AutoValue");
+		AutoValueCar carAgain = AutoValueMapper.INSTANCE.toModel(carDto);
+		return getString(car, carDto, carAgain, "mapstruct mapping AutoValue");
 	}
 
 	String withAutoValueFluent() {
@@ -79,12 +81,19 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private String getString(Object input, Object output, String info) {
+		return getString(input, output, null, info);
+	}
+	private String getString(Object input, Object output, Object output2, String info) {
 		StringBuilder strb = new StringBuilder();
 		strb.append(info);
 		strb.append('\n');
 		strb.append(input.toString());
 		strb.append('\n');
 		strb.append(output.toString());
+		if (output2 != null ){
+			strb.append('\n');
+			strb.append(output2.toString());
+		}
 		strb.append('\n');
 		strb.append('\n');
 		return strb.toString();

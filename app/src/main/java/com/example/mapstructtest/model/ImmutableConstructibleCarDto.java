@@ -5,10 +5,7 @@ public class ImmutableConstructibleCarDto {
 	private final int seatCount;
 	private final String type;
 
-	public ImmutableConstructibleCarDto() {
-		this(null, 0, null);
-	}
-
+	// MapStruct 1.3 does not support this immutable style contstructor.
 	public ImmutableConstructibleCarDto(String constructor, int seatCount, String type) {
 		this.constructor = constructor;
 		this.seatCount = seatCount;

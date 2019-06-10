@@ -5,6 +5,7 @@ public class ImmutableConstructableCar {
     private final int numberOfSeats;
     private final CarType type;
 
+    // MapStruct 1.3 does not support this immutable style contstructor.
     public ImmutableConstructableCar(String constructor, int numberOfSeats, CarType type) {
         this.constructor = constructor;
         this.numberOfSeats = numberOfSeats;

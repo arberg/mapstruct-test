@@ -13,7 +13,7 @@ public interface AutoValueMapper {
     AutoValueMapper INSTANCE = Mappers.getMapper(AutoValueMapper.class);
 
     // Java 8 added repeated annotations. If not running java 8,
-    // wrap in @Mappings annotation, as out-commented example
+    // wrap in @Mappings annotation as this out-commented example
 //    @Mappings({
 //            @Mapping(source = "numberOfSeats", target = "seatCount"),
 //            @Mapping(source = "numberOfAirbags", target = "airbagCount")
